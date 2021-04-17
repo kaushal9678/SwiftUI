@@ -55,6 +55,12 @@
 		E1035CD6262B0CA400B74C4B /* CourseSectionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CD4262B0CA400B74C4B /* CourseSectionDetail.swift */; };
 		E1035CD7262B0CA400B74C4B /* CourseSectionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CD4262B0CA400B74C4B /* CourseSectionDetail.swift */; };
 		E1035CD8262B0CA400B74C4B /* CourseSectionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CD4262B0CA400B74C4B /* CourseSectionDetail.swift */; };
+		E1035CDE262B358000B74C4B /* LibraryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CDD262B358000B74C4B /* LibraryContent.swift */; };
+		E1035CDF262B358000B74C4B /* LibraryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CDD262B358000B74C4B /* LibraryContent.swift */; };
+		E1035CE0262B358000B74C4B /* LibraryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CDD262B358000B74C4B /* LibraryContent.swift */; };
+		E1035CE1262B358000B74C4B /* LibraryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CDD262B358000B74C4B /* LibraryContent.swift */; };
+		E1035CEF262B43F400B74C4B /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035C66262AD4CA00B74C4B /* CloseButton.swift */; };
+		E1035CF0262B43F400B74C4B /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035C66262AD4CA00B74C4B /* CloseButton.swift */; };
 		E1104C2B26138E4000F179EC /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1104C2A26138E4000F179EC /* Tests_iOS.swift */; };
 		E1104C3626138E4000F179EC /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1104C3526138E4000F179EC /* Tests_macOS.swift */; };
 		E1104C3826138E4000F179EC /* DesignCodeCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1104C0F26138E3F00F179EC /* DesignCodeCourseApp.swift */; };
@@ -111,6 +117,7 @@
 		E1035CB0262AE71100B74C4B /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		E1035CCD262AF9A900B74C4B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		E1035CD4262B0CA400B74C4B /* CourseSectionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSectionDetail.swift; sourceTree = "<group>"; };
+		E1035CDD262B358000B74C4B /* LibraryContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryContent.swift; sourceTree = "<group>"; };
 		E1104C0F26138E3F00F179EC /* DesignCodeCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeCourseApp.swift; sourceTree = "<group>"; };
 		E1104C1026138E3F00F179EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E1104C1126138E4000F179EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,6 +172,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E1035CE6262B358A00B74C4B /* CustomLibrary  */ = {
+			isa = PBXGroup;
+			children = (
+				E1035C66262AD4CA00B74C4B /* CloseButton.swift */,
+				E1035CDD262B358000B74C4B /* LibraryContent.swift */,
+			);
+			path = "CustomLibrary ";
+			sourceTree = "<group>";
+		};
 		E1104C0926138E3F00F179EC = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +203,7 @@
 				E14B99FE26188422006B37CC /* CoursesView.swift */,
 				E1035C6D262ADD6D00B74C4B /* CourseDetail.swift */,
 				E1035CD4262B0CA400B74C4B /* CourseSectionDetail.swift */,
-				E1035C66262AD4CA00B74C4B /* CloseButton.swift */,
+				E1035CE6262B358A00B74C4B /* CustomLibrary  */,
 				E14B9A2C2619BB63006B37CC /* CourseList.swift */,
 				E1104C1126138E4000F179EC /* Assets.xcassets */,
 			);
@@ -452,6 +468,7 @@
 				E1035C85262ADF3700B74C4B /* CourseSection.swift in Sources */,
 				E1035CA6262AE70000B74C4B /* VisualEffectBlur.swift in Sources */,
 				E1035C7D262ADF3700B74C4B /* GradientModel.swift in Sources */,
+				E1035CDE262B358000B74C4B /* LibraryContent.swift in Sources */,
 				E14B9A2D2619BB63006B37CC /* CourseList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,6 +496,7 @@
 				E1035C68262AD4CA00B74C4B /* CloseButton.swift in Sources */,
 				E14B9A2E2619BB63006B37CC /* CourseList.swift in Sources */,
 				E1035C7E262ADF3700B74C4B /* GradientModel.swift in Sources */,
+				E1035CDF262B358000B74C4B /* LibraryContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1104C2B26138E4000F179EC /* Tests_iOS.swift in Sources */,
+				E1035CE0262B358000B74C4B /* LibraryContent.swift in Sources */,
 				E1035C8F262ADF3700B74C4B /* TutorialSection.swift in Sources */,
 				E14B9A2F2619BB63006B37CC /* CourseList.swift in Sources */,
 				E1035CCF262AF9AA00B74C4B /* TabBar.swift in Sources */,
@@ -495,6 +514,7 @@
 				E1035C70262ADD6D00B74C4B /* CourseDetail.swift in Sources */,
 				E1035C97262ADF3700B74C4B /* LivestreamSection.swift in Sources */,
 				E1035CA7262AE70000B74C4B /* VisualEffectBlur.swift in Sources */,
+				E1035CEF262B43F400B74C4B /* CloseButton.swift in Sources */,
 				E14B99F926186778006B37CC /* CourseRow.swift in Sources */,
 				E14B9A0126188422006B37CC /* CoursesView.swift in Sources */,
 				E1035C87262ADF3700B74C4B /* CourseSection.swift in Sources */,
@@ -510,11 +530,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1035CF0262B43F400B74C4B /* CloseButton.swift in Sources */,
 				E1035CC6262AEDC700B74C4B /* Course.swift in Sources */,
 				E1104C3626138E4000F179EC /* Tests_macOS.swift in Sources */,
 				E1035C94262ADF3700B74C4B /* Download.swift in Sources */,
 				E1035CD8262B0CA400B74C4B /* CourseSectionDetail.swift in Sources */,
 				E1035C8C262ADF3700B74C4B /* Tutorial.swift in Sources */,
+				E1035CE1262B358000B74C4B /* LibraryContent.swift in Sources */,
 				E1035C71262ADD6D00B74C4B /* CourseDetail.swift in Sources */,
 				E1035C90262ADF3700B74C4B /* TutorialSection.swift in Sources */,
 				E1035CB2262AE71100B74C4B /* VisualEffectBlur.swift in Sources */,
