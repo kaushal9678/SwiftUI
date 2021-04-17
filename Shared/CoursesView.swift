@@ -45,24 +45,7 @@ struct CoursesView: View {
             
             if selectedItem != nil  {
                 ZStack(alignment:.topTrailing) {
-                    VStack {
-                        ScrollView {
-                            CourseItem(course: selectedItem!)
-                                .matchedGeometryEffect(id: selectedItem!.id, in: nameSpace)
-                                .frame(height:300)
-                              
-                            VStack {
-                                ForEach(0 ..< 25) { item in
-                                    CourseRow()
-                                }
-                            }.padding()
-                        }
-                    }.background(Color("Background 1"))
-                    .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
-                    .matchedGeometryEffect(id: "Container\(selectedItem!.id)", in: nameSpace)
-                    
-                    .edgesIgnoringSafeArea(.all)
-                    
+                    CourseDetail(course: selectedItem!, nameSpace: nameSpace)
                     CloseButton().padding(.trailing, 16)
                         .onTapGesture {
                         withAnimation(.spring()){
