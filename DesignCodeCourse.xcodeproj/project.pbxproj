@@ -51,6 +51,10 @@
 		E1035CC6262AEDC700B74C4B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12950592629A77100CDEB5C /* Course.swift */; };
 		E1035CCE262AF9AA00B74C4B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CCD262AF9A900B74C4B /* TabBar.swift */; };
 		E1035CCF262AF9AA00B74C4B /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CCD262AF9A900B74C4B /* TabBar.swift */; };
+		E1035CD5262B0CA400B74C4B /* CourseSectionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CD4262B0CA400B74C4B /* CourseSectionDetail.swift */; };
+		E1035CD6262B0CA400B74C4B /* CourseSectionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CD4262B0CA400B74C4B /* CourseSectionDetail.swift */; };
+		E1035CD7262B0CA400B74C4B /* CourseSectionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CD4262B0CA400B74C4B /* CourseSectionDetail.swift */; };
+		E1035CD8262B0CA400B74C4B /* CourseSectionDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035CD4262B0CA400B74C4B /* CourseSectionDetail.swift */; };
 		E1104C2B26138E4000F179EC /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1104C2A26138E4000F179EC /* Tests_iOS.swift */; };
 		E1104C3626138E4000F179EC /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1104C3526138E4000F179EC /* Tests_macOS.swift */; };
 		E1104C3826138E4000F179EC /* DesignCodeCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1104C0F26138E3F00F179EC /* DesignCodeCourseApp.swift */; };
@@ -106,6 +110,7 @@
 		E1035CA5262AE70000B74C4B /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		E1035CB0262AE71100B74C4B /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		E1035CCD262AF9A900B74C4B /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		E1035CD4262B0CA400B74C4B /* CourseSectionDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSectionDetail.swift; sourceTree = "<group>"; };
 		E1104C0F26138E3F00F179EC /* DesignCodeCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeCourseApp.swift; sourceTree = "<group>"; };
 		E1104C1026138E3F00F179EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E1104C1126138E4000F179EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +186,7 @@
 				E14B9A232619BB01006B37CC /* items */,
 				E14B99FE26188422006B37CC /* CoursesView.swift */,
 				E1035C6D262ADD6D00B74C4B /* CourseDetail.swift */,
+				E1035CD4262B0CA400B74C4B /* CourseSectionDetail.swift */,
 				E1035C66262AD4CA00B74C4B /* CloseButton.swift */,
 				E14B9A2C2619BB63006B37CC /* CourseList.swift */,
 				E1104C1126138E4000F179EC /* Assets.xcassets */,
@@ -428,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E129505A2629A77100CDEB5C /* Course.swift in Sources */,
+				E1035CD5262B0CA400B74C4B /* CourseSectionDetail.swift in Sources */,
 				E1035C91262ADF3700B74C4B /* Download.swift in Sources */,
 				E1035CCE262AF9AA00B74C4B /* TabBar.swift in Sources */,
 				E14B9A072618874F006B37CC /* SideBar.swift in Sources */,
@@ -461,6 +468,7 @@
 				E1035C8E262ADF3700B74C4B /* TutorialSection.swift in Sources */,
 				E1104C3B26138E4000F179EC /* ContentView.swift in Sources */,
 				E1035CB1262AE71100B74C4B /* VisualEffectBlur.swift in Sources */,
+				E1035CD6262B0CA400B74C4B /* CourseSectionDetail.swift in Sources */,
 				E1035C86262ADF3700B74C4B /* CourseSection.swift in Sources */,
 				E14B99F826186778006B37CC /* CourseRow.swift in Sources */,
 				E1035C8A262ADF3700B74C4B /* Tutorial.swift in Sources */,
@@ -492,6 +500,7 @@
 				E1035C87262ADF3700B74C4B /* CourseSection.swift in Sources */,
 				E1035C93262ADF3700B74C4B /* Download.swift in Sources */,
 				E1035CC1262AEDC600B74C4B /* Course.swift in Sources */,
+				E1035CD7262B0CA400B74C4B /* CourseSectionDetail.swift in Sources */,
 				E1035C83262ADF3700B74C4B /* Livestream.swift in Sources */,
 				E1035C8B262ADF3700B74C4B /* Tutorial.swift in Sources */,
 			);
@@ -504,6 +513,7 @@
 				E1035CC6262AEDC700B74C4B /* Course.swift in Sources */,
 				E1104C3626138E4000F179EC /* Tests_macOS.swift in Sources */,
 				E1035C94262ADF3700B74C4B /* Download.swift in Sources */,
+				E1035CD8262B0CA400B74C4B /* CourseSectionDetail.swift in Sources */,
 				E1035C8C262ADF3700B74C4B /* Tutorial.swift in Sources */,
 				E1035C71262ADD6D00B74C4B /* CourseDetail.swift in Sources */,
 				E1035C90262ADF3700B74C4B /* TutorialSection.swift in Sources */,

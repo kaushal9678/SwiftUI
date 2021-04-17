@@ -11,36 +11,38 @@ struct CoursesView: View {
     @State var show = false
     
     @Namespace var nameSpace;
+    @Namespace var nameSpace2;
     @State var selectedItem: Course? = nil;
     @State var isDisabled = false;
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    #endif
     var body: some View{
         ZStack {
             #if os(iOS)
-            content
-                .navigationBarHidden(true)
+            if(horizontalSizeClass == .compact){
+                tabBar
+            }else{
+                sideBar
+            }
+           
             fullContent
                 .background(VisualEffectBlur(blurStyle: .systemMaterial).edgesIgnoringSafeArea(.all))
             #else
             content
             fullContent
-            .background(VisualEffectBlur().edgesIgnoringSafeArea(.all))
+                .background(VisualEffectBlur().edgesIgnoringSafeArea(.all))
             #endif
         }
         .navigationTitle("Courses")
-            
-        }
-   
+        
+    }
+    
     var content: some View{
-       
+        
         
         ScrollView {
             VStack(spacing:0) {
-                Text("Courses")
-                    .font(.largeTitle)
-                    .bold()
-                    .frame(maxWidth:.infinity, alignment: .leading)
-                    .padding(.leading,16)
-                    .padding(.top,54)
                 LazyVGrid(
                     columns:[
                         GridItem(.adaptive(minimum: 160),spacing: 16)]
@@ -72,12 +74,19 @@ struct CoursesView: View {
                     .padding()
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 240))], content: {
                     ForEach(courseSections){ item in
-                        CourseRow(item: item)
+                        #if os(iOS)
+                        NavigationLink(destination:CourseDetail(nameSpace: nameSpace2)) {
+                            CourseRow(item: item)
+                        }
+                        #else
+                        CourseRow(item:item);
+                        #endif
                     }
                 })
             }
             
         }.zIndex(1)
+        .navigationTitle("Courses")
     }
     @ViewBuilder
     var fullContent : some View{
@@ -87,22 +96,79 @@ struct CoursesView: View {
                 CourseDetail(nameSpace: nameSpace, course: selectedItem!)
                 CloseButton().padding( 16)
                     .onTapGesture {
-                    withAnimation(.spring()){
-                        show.toggle()
-                        selectedItem = nil
-                        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
-                            isDisabled = false;
+                        withAnimation(.spring()){
+                            show.toggle()
+                            selectedItem = nil
+                            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                                isDisabled = false;
+                            }
+                            
                         }
                         
                     }
-                    
-                }
             }.zIndex(2)
             .frame(maxWidth:712)
             .frame(maxWidth:.infinity)
-           
+            
         }
     }
+    var tabBar : some View{
+        TabView{
+            NavigationView{
+                content
+            } .tabItem { Image(systemName: "book.closed")
+                Text("Courses")
+            }
+            NavigationView{
+                CourseList()
+            } .tabItem { Image(systemName: "list.bullet.rectangle")
+                Text("Tutorials")
+            }
+            NavigationView{
+                CourseList()
+            } .tabItem { Image(systemName: "tv")
+                Text("Livestreams")
+            }
+            NavigationView{
+                CourseList()
+            } .tabItem { Image(systemName: "list.bullet.rectangle")
+                Text("Certificates")
+            }
+            NavigationView{
+                CourseList()
+            } .tabItem { Image(systemName: "magnifyingglass")
+                Text("Search")
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var sideBar:some View{
+        #if os(iOS)
+        NavigationView {
+            List {
+                NavigationLink(
+                    destination: CoursesView()
+                    ) {
+                    Label("Courses", systemImage: "book.closed")
+                }
+                Label("Tutorials", systemImage: "list.bullet.rectangle")
+                Label("LiveStreams", systemImage: "tv")
+                Label("Certificates", systemImage: "mail.stack")
+                Label("Search", systemImage: "magnifyingglass")
+            }.listStyle(SidebarListStyle())
+            .navigationTitle("Learn").toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action:{}) {
+                        Image(systemName: "person.crop.circle")
+                    }
+                }
+            })
+            content
+        }
+        #endif
+    }
+    
 }
 
 struct CoursesView_Previews: PreviewProvider {
