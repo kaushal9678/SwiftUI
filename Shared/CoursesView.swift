@@ -27,13 +27,13 @@ struct CoursesView: View {
                                 .matchedGeometryEffect(id: item.id, in: nameSpace,isSource: !show)
                                 .frame( height: 200, alignment: .center)
                                 .onTapGesture {
-                                    withAnimation(.spring()){
-                                    show.toggle()
-                                    selectedItem = item
-                                    isDisabled = true;
+                                    withAnimation(.spring(response: 0.5, dampingFraction: 0.7, blendDuration: 0)){
+                                        show.toggle()
+                                        selectedItem = item
+                                        isDisabled = true;
+                                    }
+                                    
                                 }
-                                
-                            }
                                 .disabled(isDisabled)
                         }.matchedGeometryEffect(id: "Container\(item.id)", in: nameSpace,isSource: !show)
                     }
@@ -41,47 +41,41 @@ struct CoursesView: View {
                 }
                 .padding(16)
                 .frame(maxWidth:.infinity)
-            }
+            }.zIndex(1)
             
             if selectedItem != nil  {
-                VStack {
-                    ScrollView {
-                        CourseItem(course: selectedItem!)
-                            .matchedGeometryEffect(id: selectedItem!.id, in: nameSpace)
-                            .frame(height:300)
-                            .onTapGesture {
-                                withAnimation(.spring()){
-                                    show.toggle()
-                                    selectedItem = nil
-                                    DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
-                                        isDisabled = false;
-                                    }
-                                    
+                ZStack(alignment:.topTrailing) {
+                    VStack {
+                        ScrollView {
+                            CourseItem(course: selectedItem!)
+                                .matchedGeometryEffect(id: selectedItem!.id, in: nameSpace)
+                                .frame(height:300)
+                              
+                            VStack {
+                                ForEach(0 ..< 25) { item in
+                                    CourseRow()
                                 }
-                                
+                            }.padding()
+                        }
+                    }.background(Color("Background 1"))
+                    .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+                    .matchedGeometryEffect(id: "Container\(selectedItem!.id)", in: nameSpace)
+                    
+                    .edgesIgnoringSafeArea(.all)
+                    
+                    CloseButton().padding(.trailing, 16)
+                        .onTapGesture {
+                        withAnimation(.spring()){
+                            show.toggle()
+                            selectedItem = nil
+                            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                                isDisabled = false;
                             }
-                        VStack {
-                            ForEach(0 ..< 25) { item in
-                                CourseRow()
-                            }
-                        }.padding()
+                            
+                        }
+                        
                     }
-                }.background(Color("Background 1"))
-                .matchedGeometryEffect(id: "Container\(selectedItem!.id)", in: nameSpace)
-                .transition(
-                    .asymmetric(insertion:
-                                    AnyTransition
-                                    .opacity
-                                    .animation(Animation.spring()
-                                                .delay(0.03)),
-                                    removal: AnyTransition
-                                    .opacity
-                                    .animation(Animation
-                                            .spring()
-                                    )
-                    )
-                )
-                .edgesIgnoringSafeArea(.all)
+                }.zIndex(2)
             }
             
         }//.animation(.easeInOut)//It is much slower so prefer withAnimation modifier

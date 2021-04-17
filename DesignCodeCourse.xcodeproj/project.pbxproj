@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1035C67262AD4CA00B74C4B /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035C66262AD4CA00B74C4B /* CloseButton.swift */; };
+		E1035C68262AD4CA00B74C4B /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1035C66262AD4CA00B74C4B /* CloseButton.swift */; };
 		E1104C2B26138E4000F179EC /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1104C2A26138E4000F179EC /* Tests_iOS.swift */; };
 		E1104C3626138E4000F179EC /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1104C3526138E4000F179EC /* Tests_macOS.swift */; };
 		E1104C3826138E4000F179EC /* DesignCodeCourseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1104C0F26138E3F00F179EC /* DesignCodeCourseApp.swift */; };
@@ -50,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E1035C66262AD4CA00B74C4B /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		E1104C0F26138E3F00F179EC /* DesignCodeCourseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeCourseApp.swift; sourceTree = "<group>"; };
 		E1104C1026138E3F00F179EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E1104C1126138E4000F179EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 				E12950632629B7FC00CDEB5C /* Model */,
 				E14B9A232619BB01006B37CC /* items */,
 				E14B99FE26188422006B37CC /* CoursesView.swift */,
+				E1035C66262AD4CA00B74C4B /* CloseButton.swift */,
 				E14B9A2C2619BB63006B37CC /* CourseList.swift */,
 				E1104C1126138E4000F179EC /* Assets.xcassets */,
 			);
@@ -362,6 +366,7 @@
 				E129505A2629A77100CDEB5C /* Course.swift in Sources */,
 				E14B9A072618874F006B37CC /* SideBar.swift in Sources */,
 				E14B9A0F2619B83F006B37CC /* CourseItem.swift in Sources */,
+				E1035C67262AD4CA00B74C4B /* CloseButton.swift in Sources */,
 				E1104C3A26138E4000F179EC /* ContentView.swift in Sources */,
 				E14B99F726186778006B37CC /* CourseRow.swift in Sources */,
 				E1104C3826138E4000F179EC /* DesignCodeCourseApp.swift in Sources */,
@@ -380,6 +385,7 @@
 				E14B99F826186778006B37CC /* CourseRow.swift in Sources */,
 				E1104C3926138E4000F179EC /* DesignCodeCourseApp.swift in Sources */,
 				E14B9A0026188422006B37CC /* CoursesView.swift in Sources */,
+				E1035C68262AD4CA00B74C4B /* CloseButton.swift in Sources */,
 				E14B9A2E2619BB63006B37CC /* CourseList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
