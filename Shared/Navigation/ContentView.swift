@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    #endif
     @ViewBuilder
     var body: some View {
        
         #if os(iOS)
-           content
+        if horizontalSizeClass == .compact {
+            TabBar()
+        }else{
+            content
+        }
+        
         #else
         content.frame(minWidth: 1000, idealWidth: 100, maxWidth: .infinity, minHeight: 600, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: .infinity, alignment:.center)
         #endif

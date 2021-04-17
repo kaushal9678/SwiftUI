@@ -15,7 +15,32 @@ struct CoursesView: View {
     @State var isDisabled = false;
     var body: some View{
         ZStack {
-            ScrollView {
+            #if os(iOS)
+            content
+                .navigationBarHidden(true)
+            fullContent
+                .background(VisualEffectBlur(blurStyle: .systemMaterial).edgesIgnoringSafeArea(.all))
+            #else
+            content
+            fullContent
+            .background(VisualEffectBlur().edgesIgnoringSafeArea(.all))
+            #endif
+        }
+        .navigationTitle("Courses")
+            
+        }
+   
+    var content: some View{
+       
+        
+        ScrollView {
+            VStack(spacing:0) {
+                Text("Courses")
+                    .font(.largeTitle)
+                    .bold()
+                    .frame(maxWidth:.infinity, alignment: .leading)
+                    .padding(.leading,16)
+                    .padding(.top,54)
                 LazyVGrid(
                     columns:[
                         GridItem(.adaptive(minimum: 160),spacing: 16)]
@@ -41,27 +66,42 @@ struct CoursesView: View {
                 }
                 .padding(16)
                 .frame(maxWidth:.infinity)
-            }.zIndex(1)
+                Text("Latest Sections")
+                    .fontWeight(.semibold)
+                    .frame(maxWidth: .infinity,  alignment: .leading)
+                    .padding()
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 240))], content: {
+                    ForEach(courseSections){ item in
+                        CourseRow(item: item)
+                    }
+                })
+            }
             
-            if selectedItem != nil  {
-                ZStack(alignment:.topTrailing) {
-                    CourseDetail(course: selectedItem!, nameSpace: nameSpace)
-                    CloseButton().padding(.trailing, 16)
-                        .onTapGesture {
-                        withAnimation(.spring()){
-                            show.toggle()
-                            selectedItem = nil
-                            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
-                                isDisabled = false;
-                            }
-                            
+        }.zIndex(1)
+    }
+    @ViewBuilder
+    var fullContent : some View{
+        
+        if selectedItem != nil  {
+            ZStack(alignment:.topTrailing) {
+                CourseDetail(nameSpace: nameSpace, course: selectedItem!)
+                CloseButton().padding( 16)
+                    .onTapGesture {
+                    withAnimation(.spring()){
+                        show.toggle()
+                        selectedItem = nil
+                        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                            isDisabled = false;
                         }
                         
                     }
-                }.zIndex(2)
-            }
-            
-        }//.animation(.easeInOut)//It is much slower so prefer withAnimation modifier
+                    
+                }
+            }.zIndex(2)
+            .frame(maxWidth:712)
+            .frame(maxWidth:.infinity)
+           
+        }
     }
 }
 
